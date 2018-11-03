@@ -1,5 +1,5 @@
-# <<Sample title>>
-This GitHub repository contains a code sample that demonstrate how to create angula application with SQL Server/Azure SQL Database.
+# Angular Tour Of Heroes
+This GitHub repository contains a code sample that demonstrate how to create Angular application with SQL Server/Azure SQL Database.
 
 ## Contents
 
@@ -39,8 +39,7 @@ To run this sample, you need the following prerequisites.
 ### Build and run
 1. Go to the **src** folder and restore packages using Visual Studio, VSCode, or `dotnet restore` command line.
 2. Restore npm packages using **npm install** command line. This command will download packages in **node_modules** folder.
-3. Build the sample using Visual Studio, VSCode, or `dotnet build` command line.
-3.1. If you don't have .Net core 2.1, change the version in .csproj file.
+3. Build the sample using Visual Studio, VSCode, or `dotnet build` command line. If you don't have .Net core 2.1, change the version in .csproj file.
 4. Change the connection string in appsetings.json file.
 5. Run the sample using Visual Studio, VSCode, or `dotnet run` command line.
 
