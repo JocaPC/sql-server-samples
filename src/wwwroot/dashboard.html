@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="media/css/Bootstrap.css" rel="stylesheet" />
+
+    <script src="/media/js/jquery.js"></script>
+    <script src="/media/js/d3/d3.v4.min.js"></script>
+    <script src="/media/js/d3/pie.js"></script>
+    <script src="/media/js/d3/barChart.js"></script>
+    <style>
+        .bar {
+            fill: steelblue;
+        }
+
+            .bar:hover {
+                fill: brown;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <ul class="nav nav-pills">
+            <li role="presentation"><a href="index.html">Products</a></li>
+            <li role="presentation" class="active"><a href="#">Reports</a></li>
+        </ul>
+
+        <h1>Dashboard</h1>
+
+        <svg id="pie" width="400" height="400"></svg>
+
+        <svg id="chart" width="400" height="300"></svg>
+
+        <svg id="chart2" width="400" height="300"></svg>
+    </div>
+        <script>
+
+            $(function () {
+
+                $.getJSON("/api/Product/Report1")
+                    .done(function (data) {
+                        var c = new Pie("svg#pie", { "innerRadius": 100 });
+                        c.Data(data);
+                    });
+
+                $.getJSON("/api/Product/Report2")
+                    .done(function (data) {
+                        var c = new BarChart("svg#chart", { "innerRadius": 100 });
+                        c.Data(data);
+                    });
+
+                $.getJSON("/api/Product/Report3")
+                    .done(function (data) {
+                        var c = new BarChart("svg#chart2", { "innerRadius": 20 });
+                        c.Data(data);
+                    });
+
+            });
+        </script>
+</body>
+</html>
