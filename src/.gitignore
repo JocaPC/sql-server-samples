@@ -1,5 +1,5 @@
-*.xproj.user
-*.cproj.user
+*.user
+package-lock.json
 .vs/*
 .vscode/*
 bin/*
