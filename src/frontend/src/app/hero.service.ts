@@ -2,12 +2,13 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError as observableThrowError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
+import { environment } from '../environments/environment';
 
 import { Hero } from './hero';
 
 @Injectable()
 export class HeroService {
-  private heroesUrl = 'http://localhost:58871/app/heroes'; // URL to web api
+  private heroesUrl = environment.backendUri + '/app/heroes'; // URL to web api
 
   constructor(private http: HttpClient) {}
 

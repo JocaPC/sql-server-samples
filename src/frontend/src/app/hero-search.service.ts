@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError as observableThrowError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { environment } from '../environments/environment';
 
 import { Hero } from './hero';
 
@@ -11,7 +12,7 @@ export class HeroSearchService {
 
   search(term: string): Observable<Hero[]> {
     return this.http
-      .get<Hero[]>(`http://localhost:58871/app/heroes/?name=${term}`)
+      .get<Hero[]>(environment.backendUri + `/app/heroes/?name=${term}`)
       .pipe(catchError(this.handleError));
   }
 
